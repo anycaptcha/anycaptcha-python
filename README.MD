@@ -27,3 +27,20 @@ Example : solver recaptcha v2:
     else:
         print("success ",result)
 
+Example : solver hcaptcha :
+
+    url = "https://www.calhospitalprepare.org"
+    site_key = "ca915d64-b987-4026-be6c-93cdaa26ad50"
+    api_key = "YOURAPIKEY"
+    client = AnycaptchaClient(api_key)
+    t1 = time.time()
+    task = HCaptchaTaskProxyless(website_url=url, website_key=site_key)
+
+    job = client.createTask(task)
+    t1 = time.time()
+    job.join()
+    result = job.get_solution_response()
+    if result.find("ERROR") != -1:
+        print("fail ",result)
+    else:
+        print("success ",result)

@@ -27,12 +27,12 @@ def demo_recaptchav2():
     url = "https://www.google.com/recaptcha/api2/demo"
     site_key = "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-"
     api_key = "YOURAPIKEY"
-    proxy_address="45.72.36.20"
-    proxy_port=7030
+    proxy_address="x.x.x.x"
+    proxy_port=2312312
     proxy_type="http"
     user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36 Edg/92.0.902.67"
-    proxy_login="oaleaqbv"
-    proxy_password = "slkr238tfk79"
+    proxy_login="123123"
+    proxy_password = "12312322"
     is_invisible=None
     client = AnycaptchaClient(api_key)
 
@@ -73,12 +73,12 @@ def demo_hcaptcha():
     api_key = "YOURAPIKEY"
     client = AnycaptchaClient(api_key)
     t1 = time.time()
-    proxy_address = "45.72.36.20"
-    proxy_port = 7030
+    proxy_address = "abcddd"
+    proxy_port = 1080
     proxy_type = "http"
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36 Edg/92.0.902.67"
-    proxy_login = "oaleaqbv"
-    proxy_password = "slkr238tfk79"
+    proxy_login = "aasdas"
+    proxy_password = "12312adcc"
     task = HCaptchaTask(website_url=url, website_key=site_key, proxy_address=proxy_address, proxy_port=proxy_port,
                            proxy_type=proxy_type,
                            user_agent=user_agent,
