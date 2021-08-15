@@ -8,7 +8,7 @@ from six.moves.urllib_parse import urljoin
 from .exceptions import AnycaptchaException
 
 SLEEP_EVERY_CHECK_FINISHED = 3
-MAXIMUM_JOIN_TIME = 60 * 5
+MAXIMUM_JOIN_TIME = 150
 
 
 class Job(object):
@@ -68,7 +68,7 @@ class Job(object):
     def report_incorrect_recaptcha(self):
         return self.client.reportIncorrectRecaptcha(self.task_id)
 
-    def join(self, maximum_time=None):
+    def join(self, maximum_time=150):
         elapsed_time = 0
         maximum_time = maximum_time or MAXIMUM_JOIN_TIME
 
