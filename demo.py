@@ -15,7 +15,7 @@ def demo_recaptchav2Proxyless():
     is_invisible=True
     task = RecaptchaV2TaskProxyless(website_url=url, website_key=site_key,is_invisible=is_invisible)
     job = client.createTask(task)
-    job.join(maximum_time=120)
+    job.join()
     result=job.get_solution_response()
     if result.find("ERROR") != -1:
         print("fail ",result)
@@ -41,7 +41,7 @@ def demo_recaptchav2():
                            user_agent=user_agent,
                            proxy_login=proxy_login, proxy_password=proxy_password,is_invisible=is_invisible)
     job = client.createTask(task)
-    job.join(maximum_time=120)
+    job.join()
     result = job.get_solution_response()
     if result.find("ERROR") != -1:
         print("fail ",result)
@@ -103,7 +103,7 @@ def demo_recaptchav3Proxyless():
     client = AnycaptchaClient(api_key)
     task = RecaptchaV3TaskProxyless(website_url=url, website_key=site_key, min_score=0.3)
     job = client.createTask(task)
-    job.join(maximum_time=120)
+    job.join()
     result = job.get_solution_response()
     if result.find("ERROR") != -1:
         print("fail ",result)
