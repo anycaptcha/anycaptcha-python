@@ -1,7 +1,7 @@
 
 website : anycaptcha.com
 
-* solver recaptchaV2, recaptchaV3, hcaptcha, funcaptcha, imageToTexxt , .... Super fast and cheapest.
+* solver recaptchaV2, recaptchaV3, hcaptcha, funcaptcha, imageToTexxt ,Zalo Captcha, .... Super fast and cheapest.
 
 * Install library :
 
@@ -44,3 +44,17 @@ Example : solver hcaptcha :
         print("fail ",result)
     else:
         print("success ",result)
+
+
+Example solver zaloCaptcha
+    pi_key = "YOURAPIKEY"
+    client = AnycaptchaClient(api_key)
+    task = ZaloTask()
+    job = client.createTask(task)
+    job.join()
+    result = job.get_solution_response()
+    if result.find("ERROR") != -1:
+        print("error ", result)
+    else:
+        print("success ", result)
+
