@@ -6,7 +6,7 @@ RecaptchaV2Task,
     RecaptchaV3TaskProxyless,
     HCaptchaTask,
     HCaptchaTaskProxyless,
-    ImageToTextTask,FunCaptchaProxylessTask
+    ImageToTextTask,FunCaptchaProxylessTask,ZaloTask
 )
 from .exceptions import AnycaptchaException
 from .fields import (
