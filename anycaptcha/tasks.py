@@ -255,6 +255,19 @@ class HCaptchaTaskProxyless(BaseTask):
         data["websiteURL"] = self.websiteURL
         data["websiteKey"] = self.websiteKey
         return data
+    
+class ZaloTask(BaseTask):
+    type = "ZaloTask"
+    websiteURL = None
+    websiteKey = None
+    time_sleep = 2
+    def __init__(self, *args, **kwargs):
+        super(ZaloTask, self).__init__(*args, **kwargs)
+
+    def serialize(self, **result):
+        data = super(ZaloTask, self).serialize(**result)
+        data["type"] = self.type
+        return data
 
 class HCaptchaTask(BaseTask):
     type = "HCaptchaTask"
