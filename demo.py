@@ -4,7 +4,7 @@ from os import environ
 import threading
 import time
 from anycaptcha import AnycaptchaClient, HCaptchaTaskProxyless, RecaptchaV2TaskProxyless, RecaptchaV3TaskProxyless, \
-    ImageToTextTask ,RecaptchaV2Task ,HCaptchaTask , FunCaptchaProxylessTask
+    ImageToTextTask ,RecaptchaV2Task ,HCaptchaTask , FunCaptchaProxylessTask,ZaloTask
 import random
 
 def demo_recaptchav2Proxyless():
@@ -21,6 +21,18 @@ def demo_recaptchav2Proxyless():
         print("fail ",result)
     else:
         print("success ",result)
+        
+def demo_zalocaptcha():
+    api_key = "YOURAPIKEY"
+    client = AnycaptchaClient(api_key)
+    task = ZaloTask()
+    job = client.createTask(task)
+    job.join()
+    result = job.get_solution_response()
+    if result.find("ERROR") != -1:
+        print("error ", result)
+    else:
+        print("success ", result)
 
 
 def demo_recaptchav2():
