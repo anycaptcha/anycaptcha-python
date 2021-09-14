@@ -48,13 +48,22 @@ Example : solver hcaptcha :
 
 Example solver zaloCaptcha
     pi_key = "YOURAPIKEY"
+    
     client = AnycaptchaClient(api_key)
+    
     task = ZaloTask()
+    
     job = client.createTask(task)
+    
     job.join()
+    
     result = job.get_solution_response()
+    
     if result.find("ERROR") != -1:
+    
         print("error ", result)
+        
     else:
+    
         print("success ", result)
 
